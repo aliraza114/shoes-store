@@ -14,7 +14,6 @@ import { GlobalContext } from '../state/GlobalState'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        margin: theme.spacing(1)
     },
     paper: {
         padding: theme.spacing(2),
@@ -26,42 +25,40 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
- 
-
 export default function CenteredGrid() {
     const classes = useStyles();
 
-const { cart, products, addToCardFunction, addProductQuantity } = useContext(GlobalContext)
-    
-    const addToCart = (product) => {
-        cart.find(item => item.id === product.id) ? addProductQuantity(product.id) : addToCardFunction(product)
+    const { cart, removeProductQuantity } = useContext(GlobalContext)
+    const removeFromCart = (cartItem) => {
+        removeProductQuantity(cartItem.id)
     }
-
-    console.log('P ', products)
-
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
-                { products.map(product =>
-                    <Grid key={product.id} item xs={12} sm={4} md={3} > 
+                { cart.map(cartItem =>
+                    <Grid item xs={3}> 
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia
                                     className={classes.media}
-                                    image={product.url}
+                                    image={cartItem.url}
                                     title="Contemplative Reptile" />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
-                                        {product.name}
+                                        {cartItem.name}
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
-                                        {product.desc}
+                                        {cartItem.desc}
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
                             <CardActions>
-                                <Button size="small" onClick={() => addToCart(product)} color="primary" variant="outlined">Add to Cart {product.quantity} </Button>
-                                <Typography> $ {product.price} </Typography>
+                                <Button disabled={cartItem.quantity < 1} onClick={() => removeFromCart(cartItem)} size="small" color="secondary" variant="outlined">
+                                    remove {cartItem.quantity}
+                                </Button>
+                                <Typography variant="h5" color="textSecondary" component="h2">
+                                        {cartItem.price * cartItem.quantity}$         
+                                </Typography>
                             </CardActions>
                         </Card>
                     </Grid>
