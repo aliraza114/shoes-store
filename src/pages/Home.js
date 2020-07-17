@@ -26,13 +26,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
- 
+
 
 export default function CenteredGrid() {
     const classes = useStyles();
 
-const { cart, products, addToCardFunction, addProductQuantity } = useContext(GlobalContext)
-    
+    const { cart, products, addToCardFunction, addProductQuantity } = useContext(GlobalContext)
+
     const addToCart = (product) => {
         cart.find(item => item.id === product.id) ? addProductQuantity(product.id) : addToCardFunction(product)
     }
@@ -42,8 +42,8 @@ const { cart, products, addToCardFunction, addProductQuantity } = useContext(Glo
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
-                { products.map(product =>
-                    <Grid key={product.id} item xs={12} sm={4} md={3} > 
+                {products.map(product =>
+                    <Grid key={product.id} item xs={12} sm={4} md={3} >
                         <Card className={classes.root}>
                             <CardActionArea>
                                 <CardMedia

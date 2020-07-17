@@ -8,12 +8,12 @@ import { Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <div>
-     <AppBar></AppBar>
-     <Routes>
-       <Route path="/" element={<Home/>}></Route>
-       <Route path="cart" element={<Cart/>}></Route>
-       <Route path="about" element={<About/>}></Route>
-     </Routes>
+      <AppBar></AppBar>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="cart" element={<Cart />}></Route>
+        <Route path="about" element={<About />}></Route>
+      </Routes>
     </div>
   );
 }
