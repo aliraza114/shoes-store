@@ -95,22 +95,22 @@ let initialState = {
         }
     ],
     cart: [
-        {
-            id: 10,
-            name: 's',
-            desc: 'Captan Orange Swede Leather Peshawari Chapli For Men – Desire Deal',
-            price: 4500,
-            quantity: 1,
-            url: 'https://www.church-footwear.com/content/dam/churchs_products/E/EEG/EEG018/9ACEF0ABK/EEG018_9ACE_F0ABK_F_000000_SLS.png'
-        },
-        {
-            id: 11,
-            name: 'Warm Fur Winter Boots',
-            desc: 'Imported Shoes Fashion Warm Fur Winter Men Boots',
-            price: 500,
-            quantity: 0,
-            url: 'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/1726/5712/DEKABR-2017-Hot-Men-Shoes-Fashion-Warm-Fur-Winter-Men-Boots-Autumn-Leather-Footwear-For-Man__42948.1514025919.jpg?c=2?imbypass=on'
-        }
+        // {
+        //     id: 10,
+        //     name: 's',
+        //     desc: 'Captan Orange Swede Leather Peshawari Chapli For Men – Desire Deal',
+        //     price: 4500,
+        //     quantity: 1,
+        //     url: 'https://www.church-footwear.com/content/dam/churchs_products/E/EEG/EEG018/9ACEF0ABK/EEG018_9ACE_F0ABK_F_000000_SLS.png'
+        // },
+        // {
+        //     id: 11,
+        //     name: 'Warm Fur Winter Boots',
+        //     desc: 'Imported Shoes Fashion Warm Fur Winter Men Boots',
+        //     price: 500,
+        //     quantity: 0,
+        //     url: 'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/1726/5712/DEKABR-2017-Hot-Men-Shoes-Fashion-Warm-Fur-Winter-Men-Boots-Autumn-Leather-Footwear-For-Man__42948.1514025919.jpg?c=2?imbypass=on'
+        // }
     ],
 }
 
