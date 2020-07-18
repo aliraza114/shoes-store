@@ -14,6 +14,7 @@ import { GlobalContext } from '../state/GlobalState'
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        margin: theme.spacing(1)
     },
     paper: {
         padding: theme.spacing(2),
@@ -42,7 +43,7 @@ export default function CenteredGrid() {
                                 <CardMedia
                                     className={classes.media}
                                     image={cartItem.url}
-                                    title="Contemplative Reptile" />
+                                    title={cartItem.name} />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         {cartItem.name}

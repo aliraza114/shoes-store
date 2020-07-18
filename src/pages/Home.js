@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
     media: {
         height: 140,
+        margin: theme.spacing(2)
     },
 }));
 
@@ -36,9 +37,6 @@ export default function CenteredGrid() {
     const addToCart = (product) => {
         cart.find(item => item.id === product.id) ? addProductQuantity(product.id) : addToCardFunction(product)
     }
-
-    console.log('P ', products)
-
     return (
         <div className={classes.root}>
             <Grid container spacing={3}>
@@ -49,7 +47,7 @@ export default function CenteredGrid() {
                                 <CardMedia
                                     className={classes.media}
                                     image={product.url}
-                                    title="Contemplative Reptile" />
+                                    title={product.name} />
                                 <CardContent>
                                     <Typography gutterBottom variant="h5" component="h2">
                                         {product.name}
