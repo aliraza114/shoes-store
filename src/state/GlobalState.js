@@ -25,7 +25,7 @@ let initialState = {
             id: 3,
             name: 'Cap Toe Oxford',
             desc: 'Cole Haan Gramercy Cap Toe Oxford',
-            price: 300,
+            price: 300.00,
             quantity: 0,
             url: 'https://m.media-amazon.com/images/I/717MAZ+uTGL._AC_SR700,525_.jpg'
         },
@@ -36,14 +36,6 @@ let initialState = {
             price: 184.05,
             quantity: 0,
             url: 'https://m.media-amazon.com/images/I/81Q7roNI2BL._AC_SR700,525_.jpg'
-        },
-        {
-            id: 5,
-            name: 'Stitchlite Wing Tip',
-            desc: 'Cole Haan Original Grand Stitchlite Wing Tip Oxford',
-            price: 126.00,
-            quantity: 0,
-            url: 'https://m.media-amazon.com/images/I/71duY7VVqlL._AC_SR700,525_.jpg'
         },
         {
             id: 6,
@@ -80,7 +72,7 @@ let initialState = {
         {
             id: 10,
             name: 'Peshawari Chapli',
-            desc: 'Captan Orange Swede Leather Peshawari Chapli For Men – Desire Deal',
+            desc: 'Captan Orange Swede Leather Peshawari Chapli For Men',
             price: 45.00,
             quantity: 0,
             url: 'https://www.unze.com.pk/media/catalog/product/cache/1/image/600x600/9df78eab33525d08d6e5fb8d27136e95/g/s/gs6955_1.jpg'
@@ -92,39 +84,23 @@ let initialState = {
             price: 200.95,
             quantity: 0,
             url: 'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/1726/5712/DEKABR-2017-Hot-Men-Shoes-Fashion-Warm-Fur-Winter-Men-Boots-Autumn-Leather-Footwear-For-Man__42948.1514025919.jpg?c=2?imbypass=on'
-        }
+        },
+        {
+            id: 5,
+            name: 'Stitchlite Wing Tip',
+            desc: 'Cole Haan Original Grand Stitchlite Wing Tip Oxford',
+            price: 126.00,
+            quantity: 0,
+            url: 'https://m.media-amazon.com/images/I/71duY7VVqlL._AC_SR700,525_.jpg'
+        },
     ],
-    cart: [
-        // {
-        //     id: 10,
-        //     name: 's',
-        //     desc: 'Captan Orange Swede Leather Peshawari Chapli For Men – Desire Deal',
-        //     price: 4500,
-        //     quantity: 0,
-        //     url: 'https://www.church-footwear.com/content/dam/churchs_products/E/EEG/EEG018/9ACEF0ABK/EEG018_9ACE_F0ABK_F_000000_SLS.png'
-        // },
-        // {
-        //     id: 11,
-        //     name: 'Warm Fur Winter Boots',
-        //     desc: 'Imported Shoes Fashion Warm Fur Winter Men Boots',
-        //     price: 500,
-        //     quantity: 0,
-        //     url: 'https://cdn11.bigcommerce.com/s-pkla4xn3/images/stencil/1280x1280/products/1726/5712/DEKABR-2017-Hot-Men-Shoes-Fashion-Warm-Fur-Winter-Men-Boots-Autumn-Leather-Footwear-For-Man__42948.1514025919.jpg?c=2?imbypass=on'
-        // }
-    ],
+    cart: [],
 }
 
 export const GlobalContext = createContext(initialState)
 
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducers, initialState);
-
-    function addProd(product){
-        dispatch({
-            type: 'ADD_PRODUCT',
-            payload: product
-        });
-    }
 
     function addToCardFunction(product){
         dispatch({
@@ -151,7 +127,6 @@ export const GlobalProvider = ({ children }) => {
             value={{
                 products: state.products,
                 cart: state.cart,
-                addProd,
                 addToCardFunction,
                 addProductQuantity,
                 removeProductQuantity,

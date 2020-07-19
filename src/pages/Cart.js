@@ -33,7 +33,7 @@ export default function CenteredGrid() {
     const removeFromCart = (cartItem) => {
         removeProductQuantity(cartItem.id)
     }
-    return (
+    return (    
         <div className={classes.root}>
             <Grid container spacing={3}>
                 {cart.map(cartItem =>
@@ -58,13 +58,14 @@ export default function CenteredGrid() {
                                     remove {cartItem.quantity}
                                 </Button>
                                 <Typography variant="h5" color="textSecondary" component="h2">
-                                    {cartItem.price * cartItem.quantity}$
+                                    {(cartItem.price * cartItem.quantity).toFixed(2)} $
                                 </Typography>
                             </CardActions>
                         </Card>
                     </Grid>
                 )}
             </Grid>
+           
         </div>
     );
 }
